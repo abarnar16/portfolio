@@ -178,7 +178,7 @@ const projects = [
       {/* Navbar */}
       <nav className="fixed top-0 w-full bg-black/70 backdrop-blur-md z-50 border-b border-gray-800">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-          <span className="font-bold text-indigo-400 text-xl">Abarna</span>
+          <span className="font-bold text-indigo-400 text-xl">My portfolio</span>
           <div className="flex gap-6 text-sm">
             {["about", "skills", "projects", "certifications", "contact"].map((link) => (
               <a
@@ -228,7 +228,7 @@ const projects = [
           transition={{ duration: 1 }}
         >
           <h1 className="text-5xl md:text-6xl font-extrabold text-white tracking-wide font-orbitron">
-            Hi, I'm <span className="text-indigo-400">Abarna Rajarethinam</span>
+            Hi, I&apos;m <span className="text-indigo-400">Abarna Rajarethinam</span>
           </h1>
           <motion.div
             className="text-cyan-300 text-lg md:text-xl font-mono h-8 flex items-center"

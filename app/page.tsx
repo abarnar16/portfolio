@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Code, Award } from "lucide-react";
+import { Code } from "lucide-react";
 import Typewriter from "typewriter-effect";
 
 export default function Page() {

@@ -13,8 +13,8 @@ export default function Page() {
 const projects = [
     {
       title: "Nexora – AI-Powered Wealth Management",
-      desc: "Finalist at PolyFinTech Hackathon; built an AI-driven financial advisor for high-net-worth users, leveraging reinforcement learning and predictive analytics to provide personalized investment strategies. Focused on risk management, portfolio optimization, and user-friendly dashboards.",
-      tech: ["Python", "TensorFlow", "DQN", "DDPG", "AI"],
+      desc: "Finalist at PolyFinTech Hackathon; prototyped an AI-driven financial advisor for high-net-worth users, leveraging reinforcement learning and predictive analytics to provide personalized investment strategies. Focused on risk management, portfolio optimization, and user-friendly dashboards.",
+      tech: ["Typescript", "AI"],
       category: "AI/ML",
       demo: "https://drive.google.com/file/d/1rUqvJCAOVjksADYVtbPBIzQjBxDAsr_z/view?usp=drive_link",
       github: "https://github.com/abarnar16/nexora",
@@ -22,7 +22,7 @@ const projects = [
     {
       title: "DQN Reinforcement Learning",
       desc: "Implemented Deep Q-Network on Pendulum environment for continuous control, experimenting with state-action value estimation and reward shaping. Demonstrated ability to model sequential decision-making and reinforcement learning pipelines.",
-      tech: ["Python", "Gym", "DQN"],
+      tech: ["Python", "Gym", "DQN",'RL'],
       category: "AI/ML",
       github: "https://github.com/abarnar16/dqn-RL",
     },
@@ -101,7 +101,7 @@ const projects = [
     {
       title: "Wellniverse – Gamified Fitness App for Children",
       desc: "Designed a prototype for a gamified fitness app targeting children, featuring avatars, daily challenges, and progress tracking to encourage healthy habits.",
-      tech: ["React", "Node.js", "MongoDB", "UX Design"],
+      tech: ["React", "Node.js", "UX Design"],
       category: "Web",
     },
     {
@@ -120,7 +120,7 @@ const projects = [
   ];
 
   const skills = [
-    { category: "AI & ML", items: ["TensorFlow", "PyTorch", "Keras", "scikit-learn"], levels: [90, 85, 80, 75] },
+    { category: "AI & ML", items: ["TensorFlow", "PyTorch", "Keras", "scikit-learn"], levels: [90, 85, 80, 90] },
     { category: "Data Science", items: ["Pandas", "NumPy", "Tableau", "Power BI"], levels: [95, 90, 85, 80] },
     { category: "Web & App Dev", items: ["React", "Node.js", "Flask", "WordPress"], levels: [90, 85, 80, 75] },
     { category: "Databases", items: ["MySQL", "MongoDB", "Data Warehousing"], levels: [85, 80, 70] },
@@ -134,38 +134,67 @@ const projects = [
 
   const categories = ["All", ...skills.map(s => s.category)];
 
-  const experiencesAndCerts = [
-    {
-      title: "National Youth Council Leadership Camp (NYCLC)",
-      date: "Jun 2025",
-      desc: "Participated in a leadership course for 3 days emphasizing team-building, communication, and civic engagement.",
-    },
-    {
-      title: "Introduction to Deep Learning with Keras",
-      date: "Jan 2025",
-      desc: "Completed a DataCamp course on Keras fundamentals for deep learning.",
-    },
-    {
-      title: "Supervised Learning with Scikit-learn",
-      date: "Jan 2024",
-      desc: "Completed a DataCamp course on supervised machine learning using scikit-learn at Singapore Polytechnic.",
-    },
-    {
-      title: "Academic Highlights",
-      date: "",
-      desc: "Current grade: 3.95 CGPA; Director’s Honour Roll for AY2024/2025; Pursuing Certificate in Advanced Mathematics; Currently a Participant, Singapore Youth Leadership Programme.",
-    },
-    {
-      title: "Hackathons & Collaboration",
-      date: "",
-      desc: "Competed in multiple hackathons including PolyFintech (Finalist) and NUS Humanity; Collaborated on interdisciplinary projects with peers from diverse backgrounds.",
-    },
-    {
-      title: "Clubs & Courses",
-      date: "",
-      desc: "Active member of Singapore Polytechnic Astronomy Club and Life Arts Club. Completed courses: Supervised Learning with scikit-learn, Generative AI Concepts, Introduction to Data Visualization with Plotly, Introduction to Deep Learning with Keras.",
-    },
-  ];
+const experiencesAndCerts = [
+    // 🎓 Academics
+  {
+    category: "Academics",
+    title: "Director’s Honour Roll",
+    date: "April 2025",
+    desc: "Achieved a current GPA of 3.95; awarded the Director’s Honour Roll for AY2024/2025. Pursuing Certificate in Advanced Mathematics and participating in the Singapore Youth Leadership Programme.",
+  },
+ 
+{
+  category: "Experiences",
+  title: "PolyFintech Finalist",
+  date: "2024",
+  desc: "Finalist in the PolyFintech Hackathon, where I collaborated with a cross-disciplinary team to design and pitch innovative fintech solutions addressing real-world financial challenges. Also participated in the NUS Humanity Hackathon, applying AI-driven approaches to social impact projects.",
+},
+
+    // 🎯 Experiences
+  {
+    category: "Experiences",
+    title: "National Youth Council Leadership Camp (NYCLC)",
+    date: "Jun 2025",
+    desc: "Participated in a 3-day leadership camp emphasizing team-building, communication, and civic engagement through experiential learning activities.",
+  },
+
+  // 📘 Certifications
+  {
+    category: "Certifications",
+    title: "Introduction to Deep Learning with Keras",
+    date: "Jan 2025",
+    desc: "Completed a DataCamp course covering the fundamentals of deep learning using Keras, including building, training, and evaluating neural networks.",
+  },
+  {
+    category: "Certifications",
+    title: "Supervised Learning with Scikit-learn",
+    date: "Jan 2024",
+    desc: "Completed a DataCamp course focused on implementing supervised learning models such as regression, classification, and model evaluation using scikit-learn.",
+  },
+  {
+    category: "Certifications",
+    title: "Generative AI Concepts",
+    date: "2024",
+    desc: "Completed a DataCamp course introducing the concepts of generative AI, including GANs, diffusion models, and applications in creative AI.",
+  },
+  {
+    category: "Certifications",
+    title: "Introduction to Data Visualization with Plotly",
+    date: "2024",
+    desc: "Completed a DataCamp course on data visualization, learning to create interactive and insightful dashboards with Plotly in Python.",
+  },
+
+ 
+
+  // 🌟 Extracurriculars
+  {
+    category: "Extracurriculars",
+    title: "Clubs & Activities",
+    date: "",
+    desc: "Active member of the Singapore Polytechnic Astronomy Club and Life Arts Club, contributing to both scientific curiosity and creative exploration.",
+  },
+];
+
 
   const filteredProjects =
     activeCategory === "All"
@@ -175,26 +204,33 @@ const projects = [
   return (
     <div className="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen font-sans scroll-smooth">
 
-      {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-black/70 backdrop-blur-md z-50 border-b border-gray-800">
-        <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-          <span className="font-bold text-indigo-400 text-xl">My portfolio</span>
-          <div className="flex gap-6 text-sm">
-            {["about", "skills", "projects", "certifications", "contact"].map((link) => (
-              <a
-                key={link}
-                href={`#${link}`}
-                className="hover:text-indigo-400 transition"
-              >
-                {link.charAt(0).toUpperCase() + link.slice(1)}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
+  {/* Navbar */}
+<nav className="fixed top-0 w-full bg-black/70 backdrop-blur-md z-50 border-b border-gray-800">
+  <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <a
+      href="#hero"
+      className="font-bold text-indigo-400 text-xl hover:text-indigo-300 transition"
+    >
+      My portfolio
+    </a>
+    <div className="flex gap-6 text-sm">
+      {["skills", "projects", "certifications", "contact"].map((link) => (
+        <a
+          key={link}
+          href={`#${link}`}
+          className="hover:text-indigo-400 transition"
+        >
+          {link.charAt(0).toUpperCase() + link.slice(1)}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+
 
       {/* Hero Section */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-36 bg-gradient-to-b from-gray-900 via-black to-gray-900 overflow-hidden">
+      <section id = 'hero' className="relative flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-36 bg-gradient-to-b from-gray-900 via-black to-gray-900 overflow-hidden">
         {/* Particle Background */}
         <div className="absolute inset-0 pointer-events-none z-0">
           {[...Array(20)].map((_, i) => (
@@ -351,7 +387,7 @@ const projects = [
 
       {/* Skills Section */}
       <section id="skills" className="px-6 py-16 bg-[#101727]">
-        <h2 className="text-3xl font-bold mb-10 text-center text-indigo-300">Skills</h2>
+        <h2 className="text-3xl font-bold mb-10 text-center text-indigo-300">Technical Skills</h2>
         <div className="flex gap-4 mb-8 justify-center flex-wrap">
           {categories.map((cat) => (
             <button

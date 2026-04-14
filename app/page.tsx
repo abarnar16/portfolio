@@ -110,6 +110,20 @@ const projects = [
       tech: ["Linux", "Apache", "MySQL", "PHP", "WordPress"],
       category: "Web",
     },
+    {
+  title: "Keyword Cipher Encrypted Message Analyzer",
+  desc: "Built a full menu-driven cryptographic analysis system for keyword ciphers, supporting encryption/decryption, frequency analysis, batch decryption, cipher strength evaluation, and keyword inference. Designed with modular architecture and CLI-based interaction for algorithmic clarity and scalability.",
+  tech: ["Python", "Cryptography", "Algorithms", "DSAA"],
+  category: "Database",
+  github: "",
+},
+{
+  title: "DASK Expression Evaluator ",
+  desc: "Developed a full expression evaluation engine supporting dependency-aware computation, parse tree optimisation, cycle detection, and smart evaluation. Includes expression validation, complexity ranking, optimisation via tree rewriting, and performance-aware execution.",
+  tech: ["Python", "Data Structures", "Algorithms", "Parse Trees"],
+  category: "Database",
+  github: "",
+}
   ];
 
   const skill = [
@@ -134,13 +148,15 @@ const projects = [
 
   const categories = ["All", ...skills.map(s => s.category)];
 
+  
+
 const experiencesAndCerts = [
     // 🎓 Academics
   {
     category: "Academics",
     title: "Director’s Honour Roll",
     date: "April 2025",
-    desc: "Achieved a current GPA of 3.95; awarded the Director’s Honour Roll for AY2024/2025. Pursuing Certificate in Advanced Mathematics and participating in the Singapore Youth Leadership Programme.",
+    desc: "Achieved a current GPA of 3.94; awarded the Director’s Honour Roll for AY2024/2025. Pursuing Certificate in Advanced Mathematics and participating in the Singapore Youth Leadership Programme.",
   },
  
 {
@@ -204,7 +220,7 @@ const experiencesAndCerts = [
   return (
     <div className="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen font-sans scroll-smooth">
 
-  {/* Navbar */}
+{/* Navbar */}
 <nav className="fixed top-0 w-full bg-black/70 backdrop-blur-md z-50 border-b border-gray-800">
   <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
     <a
@@ -213,8 +229,20 @@ const experiencesAndCerts = [
     >
       My portfolio
     </a>
-    <div className="flex gap-6 text-sm">
-      {["skills", "projects", "certifications", "contact"].map((link) => (
+
+    <div className="flex gap-6 text-sm flex-wrap justify-end">
+      {[
+        "skills",
+        "projects",
+        "hackathons",
+        "leadership",
+        "work",
+        "osip",
+        "volunteering",
+        "ongoing",
+        "certifications",
+        "contact",
+      ].map((link) => (
         <a
           key={link}
           href={`#${link}`}
@@ -226,7 +254,6 @@ const experiencesAndCerts = [
     </div>
   </div>
 </nav>
-
 
 
       {/* Hero Section */}
@@ -490,27 +517,668 @@ const experiencesAndCerts = [
         </div>
       </section>
 
-   {/* Certifications & Achievements Section */}
-<section id="certifications" className="px-6 py-16 max-w-5xl mx-auto bg-[#101727] rounded-xl">
-  <h2 className="text-3xl font-bold mb-10 text-center text-indigo-300"> Certifications & Achievements</h2>
-  <div className="relative border-l-2 border-indigo-400 pl-10 flex flex-col gap-8">
+
+{/* Hackathons Section */}
+<section id="hackathons" className="px-6 py-16 max-w-6xl mx-auto">
+  <h2 className="text-3xl font-bold mb-3 text-center text-indigo-300">
+    Hackathons & Applied AI Systems
+  </h2>
+
+  <p className="text-gray-400 text-center max-w-3xl mx-auto mb-12">
+    A collection of applied AI and systems-focused hackathons where I designed
+    and built end-to-end prototypes across fintech, education, governance, and
+    machine learning infrastructure.
+  </p>
+
+  <div className="grid md:grid-cols-2 gap-8">
+
+    {/* FINTECH */}
+    <motion.div whileHover={{ scale: 1.02 }}
+      className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col"
+    >
+      <div className="h-48 w-full bg-black flex items-center justify-center p-2">
+        <video
+          src="/images/fintech.mp4"
+          controls
+          className="h-full w-auto object-contain rounded-md"
+        />
+      </div>
+
+      <div className="p-5 flex flex-col flex-1">
+        <h3 className="text-lg font-semibold text-white">
+          PolyFinTech Hackathon
+        </h3>
+
+        <p className="text-indigo-300 text-sm mb-2">
+          Finalist • Smart Banking & AI Investment Assistant
+        </p>
+
+        <p className="text-gray-400 text-sm flex-1">
+          Built a smart banking prototype integrating an AI chatbot with real-time
+          financial news analysis to support investment decision-making. The system
+          processes live market signals and contextual news data to generate
+          actionable insights for users, simulating an intelligent personal finance
+          assistant.
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-3">
+          {["AI/ML", "NLP", "FinTech", "Real-time Systems"].map((t) => (
+            <span key={t} className="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+
+    {/* HUMANITY */}
+    <motion.div whileHover={{ scale: 1.02 }}
+      className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col"
+    >
+      <div className="h-48 w-full bg-black flex items-center justify-center p-2">
+        <img
+          src="/images/humanity.jpeg"
+          className="h-full w-auto object-contain rounded-md"
+        />
+      </div>
+
+      <div className="p-5 flex flex-col flex-1">
+        <h3 className="text-lg font-semibold text-white">
+          NUS Humanity Hackathon
+        </h3>
+
+        <p className="text-indigo-300 text-sm mb-2">
+          AI for Education & Behavioural Design
+        </p>
+
+        <p className="text-gray-400 text-sm flex-1">
+          Developed a gamified food ordering system for primary school students
+          designed to encourage healthy eating habits. Students earn or lose points
+          based on nutritional value, which can later be redeemed for school rewards.
+          The system applies behavioural reinforcement principles to promote long-term
+          healthy lifestyle habits.
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-3">
+          {["AI/UX Design", "Gamification", "Behavioural Systems"].map((t) => (
+            <span key={t} className="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+
+    {/* NAISC */}
+    <motion.div whileHover={{ scale: 1.02 }}
+      className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col"
+    >
+      <div className="h-48 w-full bg-black flex items-center justify-center p-2">
+        <img
+          src="/images/naisc.jpeg"
+          className="h-full w-auto object-contain rounded-md"
+        />
+      </div>
+
+      <div className="p-5 flex flex-col flex-1">
+        <h3 className="text-lg font-semibold text-white">
+          NAISC (Singtel AI Challenge)
+        </h3>
+
+        <p className="text-yellow-300 text-sm mb-2">
+          Selected Participant • AI Drift Detection System (Ongoing)
+        </p>
+
+        <p className="text-gray-400 text-sm flex-1">
+          Currently developing an AI monitoring system for detecting data and model
+          drift in machine learning pipelines. The solution includes a professional
+          analytics dashboard that visualizes drift patterns and model performance
+          degradation, along with mitigation strategies for maintaining model stability
+          over time.
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-3">
+          {["Machine Learning", "MLOps", "Model Monitoring"].map((t) => (
+            <span key={t} className="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <p className="text-xs text-yellow-400 mt-3">
+          In progress — focused on system design & evaluation
+        </p>
+      </div>
+    </motion.div>
+
+    {/* ASEAN YOUTH */}
+    <motion.div whileHover={{ scale: 1.02 }}
+      className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col"
+    >
+      <div className="h-48 w-full">
+        <iframe
+          src="https://www.youtube.com/embed/0isP7FiSwkA"
+          className="h-full w-full"
+          allowFullScreen
+        />
+      </div>
+
+      <div className="p-5 flex flex-col flex-1">
+        <h3 className="text-lg font-semibold text-white">
+          ASEAN Youth Challenge
+        </h3>
+
+        <p className="text-indigo-300 text-sm mb-2">
+          Regional AI & Legal Tech Innovation (Ongoing)
+        </p>
+
+        <p className="text-gray-400 text-sm flex-1">
+          Developed “FairContract AI”, a system designed to support small business
+          owners and migrant workers by analyzing contracts for unfair or misleading
+          clauses. The model compares contract terms against market benchmarks,
+          highlights discrepancies such as underpayment risks, and generates
+          negotiation suggestions. The system also integrates a lawyer-in-the-loop
+          mechanism where human legal volunteers assist when AI confidence is low.
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-3">
+          {["AI/ML", "Legal Tech", "NLP", "Human-in-the-loop"].map((t) => (
+            <span key={t} className="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded-full">
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <p className="text-xs text-yellow-400 mt-3">
+          Ongoing — system design & prototype stage
+        </p>
+      </div>
+    </motion.div>
+
+  </div>
+</section>
+
+
+  {/* Leadership & Programmes Section */}
+<section
+  id="leadership"
+  className="px-6 py-16 max-w-5xl mx-auto"
+>
+  <h2 className="text-3xl font-bold text-center text-indigo-300 mb-3">
+    Leadership & Programmes
+  </h2>
+
+  <p className="text-center text-gray-400 mb-10">
+    A reflection of my leadership journey through immersive national programmes
+    that shaped my understanding of teamwork, resilience, communication, and civic awareness.
+  </p>
+
+  <div className="space-y-10">
+
+    {/* NYCLC */}
+    <motion.div
+      className="bg-gray-900/60 border border-gray-800 rounded-2xl p-6 backdrop-blur-md"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <h3 className="text-2xl font-semibold text-white mb-1">
+        National Youth Council Leadership Camp (NYCLC)
+      </h3>
+
+      <p className="text-indigo-300 text-sm mb-4">
+        Singapore Young Leaders Programme | 3D2N Experiential Leadership Camp | Youths across Singapore
+      </p>
+
+      <p className="text-gray-400 leading-relaxed mb-4">
+        NYCLC was one of the most transformative leadership experiences I have
+        participated in. Over three days and two nights, I was immersed in a
+        diverse environment of youth from across Singapore, each bringing
+        different perspectives, personalities, and strengths. This diversity
+        challenged me to adapt my communication style and learn how to work
+        effectively with individuals outside my usual circle.
+      </p>
+
+      <p className="text-gray-400 leading-relaxed mb-4">
+        A defining moment for me was the high-elements challenge. Initially,
+        I felt a strong sense of hesitation and fear when faced with physically
+        demanding obstacles at height. However, I chose to push through this
+        discomfort. Completing the challenge taught me that leadership is not
+        about avoiding fear, but about acknowledging it and still moving forward
+        with clarity and composure.
+      </p>
+
+      {/* NYCLC IMAGES (SMALLER + SIDE STYLE MAINTAINED) */}
+      <div className="grid grid-cols-3 gap-3 mb-5">
+        <img src="/images/nyclc_1.jpeg" className="rounded-lg border border-gray-700 object-cover h-40 w-full" />
+        <img src="/images/nyclc_2.jpeg" className="rounded-lg border border-gray-700 object-cover h-40 w-full" />
+        <img src="/images/nyclc_3.jpeg" className="rounded-lg border border-gray-700 object-cover h-40 w-full" />
+      </div>
+
+      <p className="text-gray-400 leading-relaxed">
+        Beyond physical challenges, NYCLC reshaped my understanding of leadership.
+        I learned that effective leadership is deeply rooted in communication,
+        empathy, and trust. It is about creating an environment where team members
+        feel supported and empowered to contribute, especially in situations where
+        uncertainty or pressure is present.
+      </p>
+    </motion.div>
+
+    {/* POLY FORUM */}
+    <motion.div
+      className="bg-gray-900/60 border border-gray-800 rounded-2xl p-6 backdrop-blur-md"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <h3 className="text-2xl font-semibold text-white mb-1">
+        Poly Forum
+      </h3>
+
+      <p className="text-indigo-300 text-sm mb-4">
+        6-Day National Governance & Dialogue Programme | 3D2N Residential Stay | Students from all 5 Polytechnics
+      </p>
+
+      <p className="text-gray-400 leading-relaxed mb-4">
+        Poly Forum was a six-day national-level programme that brought together
+        students from all five polytechnics in Singapore, creating a highly
+        diverse environment for dialogue and collaboration. The programme focused
+        on understanding Singapore’s governance structures, national policies,
+        and the broader socio-political context shaping the country’s development.
+      </p>
+
+      <p className="text-gray-400 leading-relaxed mb-4">
+        A key highlight was the 3-day, 2-night residential component, where we
+        engaged in intensive discussions, group tasks, and structured debates.
+        Being placed in mixed groups with students from different institutions
+        challenged me to step out of my comfort zone and actively engage in
+        conversations with individuals I had never met before. This environment
+        required me to quickly build rapport, listen actively, and contribute
+        meaningfully despite differing viewpoints.
+      </p>
+
+      <p className="text-gray-400 leading-relaxed mb-4">
+        Throughout the programme, I took initiative in group discussions and
+        deliberately pushed myself to contribute more confidently during
+        structured sharing sessions. This allowed me to strengthen my public
+        speaking abilities, especially in articulating ideas clearly under time
+        pressure and in front of a wider audience.
+      </p>
+
+      {/* PF IMAGES (MATCH NYCLC SIZE EXACTLY) */}
+      <div className="grid grid-cols-3 gap-3 mb-5">
+        <img src="/images/pf_1.jpeg" className="rounded-lg border border-gray-700 object-cover h-40 w-full" />
+        <img src="/images/pf_2.jpeg" className="rounded-lg border border-gray-700 object-cover h-40 w-full" />
+        <img src="/images/pf_3.jpeg" className="rounded-lg border border-gray-700 object-cover h-40 w-full" />
+        <img src="/images/pf_4.jpeg" className="rounded-lg border border-gray-700 object-cover h-40 w-full" />
+        <img src="/images/pf_5.jpeg" className="rounded-lg border border-gray-700 object-cover h-40 w-full" />
+      </div>
+
+      <p className="text-gray-400 leading-relaxed">
+        Overall, Poly Forum strengthened my understanding of Singapore’s
+        governance and civic landscape, while also helping me grow in confidence,
+        leadership, and communication.
+      </p>
+    </motion.div>
+
+    {/* YMAC */}
+    <motion.div
+      className="bg-gray-900/60 border border-gray-800 rounded-2xl p-6 backdrop-blur-md"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <h3 className="text-2xl font-semibold text-white mb-1">
+        Youth Model ASEAN Conference (YMAC)
+      </h3>
+
+      <p className="text-indigo-300 text-sm mb-4">
+        ASEAN Diplomatic Simulation
+      </p>
+
+      <p className="text-gray-400 leading-relaxed">
+        YMAC provided me with the opportunity to step into the role of a
+        diplomatic representative, engaging in structured debates and negotiations
+        on regional issues. Through this experience, I developed a stronger ability
+        to think critically under pressure, articulate positions clearly, and
+        respond thoughtfully in real-time discussions.
+        <br /><br />
+        More importantly, it gave me a deeper appreciation for diplomacy and the
+        complexity of international cooperation, where outcomes are shaped not just
+        by ideas, but by communication, compromise, and mutual understanding.
+      </p>
+    </motion.div>
+
+  </div>
+</section>
+
+{/* Work Experience Section */}
+<section
+  id="work"
+  className="px-6 py-20 max-w-6xl mx-auto"
+>
+  <h2 className="text-3xl font-bold text-center text-indigo-300 mb-3">
+    Work Experience
+  </h2>
+
+  <p className="text-center text-gray-400 mb-14 max-w-2xl mx-auto">
+    Real-world experience spanning administrative operations, customer service, and software development,
+    with a focus on improving efficiency, communication, and practical problem-solving.
+  </p>
+
+  <div className="space-y-20">
+
+    {/* ================= ARP ENGINEERING ================= */}
+    <motion.div
+      className="grid md:grid-cols-2 gap-10 items-center bg-gray-900/40 border border-gray-800 rounded-2xl p-6 md:p-10 backdrop-blur-md"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+
+      {/* LEFT TEXT */}
+      <div>
+        <h3 className="text-2xl font-semibold text-white mb-2">
+          Administrative Assistant — ARP Engineering
+        </h3>
+
+        <p className="text-indigo-300 text-sm mb-4">
+          Jan 2024 – Feb 2024
+        </p>
+
+        <p className="text-gray-400 leading-relaxed mb-4">
+          Worked as an administrative assistant handling document processing,
+          invoice generation, and operational paperwork within the company.
+          This exposed me to real business workflows and inefficiencies in
+          manual Excel-based systems.
+        </p>
+
+        <p className="text-gray-400 leading-relaxed mb-4">
+          I independently developed a web-based invoice generation system
+          to automate and streamline this process. The solution reduced manual
+          effort, improved consistency, and significantly increased operational efficiency,
+          bridging the gap between administrative work and software engineering.
+        </p>
+
+        <a
+          href="https://github.com/abarnar16/arp-document-generator"
+          target="_blank"
+          className="text-indigo-400 hover:underline text-sm"
+        >
+          View Project Repository →
+        </a>
+      </div>
+
+      {/* RIGHT IMAGE SPOTLIGHT */}
+      <div className="grid gap-3">
+        <div className="bg-black/30 rounded-xl p-3">
+          <img
+            src="/images/arp_1.jpeg"
+            className="w-full h-auto max-h-[220px] object-contain rounded-lg"
+          />
+        </div>
+
+        <div className="bg-black/30 rounded-xl p-3">
+          <img
+            src="/images/arp_2.jpeg"
+            className="w-full h-auto max-h-[220px] object-contain rounded-lg"
+          />
+        </div>
+      </div>
+
+    </motion.div>
+
+    {/* ================= RIDA VIDEO CENTRE ================= */}
+    <motion.div
+      className="grid md:grid-cols-2 gap-10 items-center bg-gray-900/40 border border-gray-800 rounded-2xl p-6 md:p-10 backdrop-blur-md"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+
+      {/* LEFT IMAGE */}
+      <div className="bg-black/30 rounded-xl p-3 flex justify-center">
+        <img
+          src="/images/rida_1.jpeg"
+          className="w-full max-h-[350px] object-contain rounded-lg"
+        />
+      </div>
+
+      {/* RIGHT TEXT */}
+      <div>
+        <h3 className="text-2xl font-semibold text-white mb-2">
+          Sales Associate — RIDA Video Centre
+        </h3>
+
+        <p className="text-indigo-300 text-sm mb-4">
+          Oct 2025 – Feb 2026
+        </p>
+
+        <ul className="text-gray-400 space-y-2 list-disc pl-5 leading-relaxed">
+          <li>Provided customer service and handled sales transactions in one of Singapore’s remaining DVD rental stores</li>
+          <li>Managed inventory and assisted customers with product selection</li>
+          <li>Adapted to a niche retail environment, gaining experience in customer engagement and store operations</li>
+        </ul>
+      </div>
+
+    </motion.div>
+
+  </div>
+</section>
+
+{/* OSIP SECTION */}
+<section id="osip" className="px-6 py-24 text-white">
+
+  {/* Title */}
+  <div className="text-center mb-14 max-w-3xl mx-auto">
+    <h2 className="text-4xl font-bold text-indigo-300">
+      Overseas Sustainable Impact Programme (OSIP)
+    </h2>
+    <p className="text-gray-500 mt-3">
+      A two-week overseas engineering programme in Indonesia focused on designing and implementing real-world solutions.
+    </p>
+  </div>
+
+  {/* CONTAINER */}
+  <div className="relative max-w-4xl mx-auto">
+
+    {/* LEFT IMAGES (STRONGER GLOW) */}
+    <div className="hidden md:block absolute -left-48 top-[-20px] space-y-10">
+      <img src="/images/osip_1.jpeg" className="w-44 rotate-[-6deg] rounded-xl border border-gray-700 shadow-2xl shadow-indigo-500/40" />
+      <img src="/images/osip_3.jpeg" className="w-44 rotate-[5deg] rounded-xl border border-gray-700 shadow-2xl shadow-indigo-500/40" />
+      <img src="/images/osip_6.jpeg" className="w-44 rotate-[-4deg] rounded-xl border border-gray-700 shadow-2xl shadow-indigo-500/40" />
+      <img src="/images/osip_8.jpeg" className="w-44 rotate-[3deg] rounded-xl border border-gray-700 shadow-2xl shadow-indigo-500/40" />
+    </div>
+
+    {/* RIGHT IMAGES (STRONGER GLOW, osip_2 removed) */}
+    <div className="hidden md:block absolute -right-48 top-[-10px] space-y-10">
+      <img src="/images/osip_4.jpeg" className="w-44 rotate-[-5deg] rounded-xl border border-gray-700 shadow-2xl shadow-indigo-500/40" />
+      <img src="/images/osip_7.jpeg" className="w-44 rotate-[4deg] rounded-xl border border-gray-700 shadow-2xl shadow-indigo-500/40" />
+      <img src="/images/osip_10.jpeg" className="w-44 rotate-[-3deg] rounded-xl border border-gray-700 shadow-2xl shadow-indigo-500/40" />
+    </div>
+
+    {/* CENTER TEXT (SHORTER + MATCHED GREY) */}
+    <div className="text-gray-400 leading-relaxed text-[15px]
+      bg-gray-900/60 backdrop-blur-md border border-gray-800 rounded-2xl p-9 shadow-2xl space-y-5">
+
+      <p>
+OSIP (Overseas Sustainable Innovation Project) was a 12-day programme in Makassar, Indonesia that pushed me far out of my comfort zone and placed me in a completely unfamiliar engineering and cultural environment. Working in rural Gowa, I collaborated directly with MSME owner Pak Didi and his team, where I was exposed to the realities of cascara production, a fully manual, labour-intensive process that was slow, inconsistent, and heavily dependent on external factors such as weather. Seeing these constraints firsthand made me realise how deeply operational inefficiencies can directly affect productivity and the livelihoods of workers in rural communities.
+</p>
+
+<p>
+This experience fundamentally reshaped how I approach engineering problems. What initially appeared to be a simple optimisation challenge revealed itself to be a human-centred system where even small design improvements could significantly reduce physical strain and improve daily output. During the ideation phase, I played an active role in leading idea generation within my team, helping to structure discussions, evaluate feasibility under real constraints, and translate field observations into practical engineering directions. Together, we designed a low-cost mechanical separation system using locally available materials, with a strong emphasis on simplicity, durability, and real-world usability rather than technical complexity, ensuring it could realistically be adopted, maintained, and trusted by the community.
+</p>
+
+<p>
+Throughout the 12 days, constant iteration based on field feedback forced me to think critically under constraints, challenge assumptions, and communicate ideas clearly in an unfamiliar and resource-limited environment, strengthening both my adaptability and teamwork. Beyond the technical work, the experience was equally transformative on a personal level, as collaborating with people from different backgrounds significantly improved my leadership, communication, and ability to operate in high-pressure, unfamiliar settings. Overall, OSIP reshaped my understanding of engineering as a discipline grounded in empathy, constraint-driven problem solving, and real-world impact, where success is defined not by complexity but by usability, adoption, and tangible improvement in people’s lives.
+</p>
+
+    </div>
+
+  </div>
+</section>
+
+{/* VOLUNTEERING SECTION */}
+<section id="volunteering" className="px-6 text-white">
+
+  {/* Title */}
+  <div className="text-center mb-14 max-w-3xl mx-auto">
+    <h2 className="text-4xl font-bold text-indigo-300">
+      Volunteering
+    </h2>
+    <p className="text-gray-400 mt-3">
+      Community outreach experience with Homeless SG, focused on supporting vulnerable individuals and understanding social inequality through direct engagement.
+    </p>
+  </div>
+
+  {/* CARD CONTAINER */}
+  <div className="max-w-5xl mx-auto bg-gray-900/60 border border-gray-800 backdrop-blur-md rounded-2xl p-6 shadow-lg">
+
+    {/* TEXT */}
+    <p className="text-gray-400 leading-relaxed mb-4">
+      Volunteering with Homeless SG gave me direct exposure to the realities faced by individuals experiencing homelessness in Singapore. It was a grounding experience that challenged my assumptions and deepened my awareness of social inequality beyond what is visible in daily life.
+    </p>
+
+    <p className="text-gray-400 leading-relaxed mb-4">
+      Through outreach activities, I supported the distribution of essential items and engaged in meaningful conversations with individuals from different walks of life. These interactions reinforced the importance of empathy, respect, and treating every person with dignity regardless of their circumstances.
+    </p>
+
+    {/* IMAGES INSIDE CARD */}
+    <div className="grid grid-cols-2 gap-4 my-6">
+      <img
+        src="/images/vol_1.jpeg"
+        className="w-full h-78 object-cover rounded-xl shadow-2xl border border-gray-700"
+      />
+      <img
+        src="/images/vol_2.jpeg"
+        className="w-full h-78 object-cover rounded-xl shadow-2xl border border-gray-700"
+      />
+    </div>
+
+    {/* FINAL TEXT */}
+    <p className="text-gray-400 leading-relaxed">
+      This experience strengthened my communication skills in sensitive environments and deepened my sense of social responsibility. It also helped me understand how consistent, small acts of support can create meaningful impact within a community.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section id="ongoing" className="px-6 py-24 text-white">
+
+  {/* Title */}
+  <div className="text-center mb-14 max-w-3xl mx-auto">
+    <h2 className="text-4xl font-bold text-indigo-300">
+      Current Projects & Startups
+    </h2>
+    <p className="text-gray-400 mt-3">
+      Ongoing ventures where I take ownership across product design, engineering, and deployment, working closely with real stakeholders and end users.
+    </p>
+  </div>
+
+  {/* ROW CARDS */}
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+
+    {/* SLA CARD */}
+    <div className="bg-gray-900/60 border border-gray-800 backdrop-blur-md rounded-2xl p-6 shadow-lg flex flex-col">
+
+      <h3 className="text-2xl font-semibold text-indigo-300 mb-3">
+        SLA – Material Prediction System
+      </h3>
+
+      <p className="text-gray-400 leading-relaxed mb-4">
+        Led product direction and core engineering for a real-world SLA collaboration project. Built and trained a machine learning model that predicts material composition from 3D building scan files, deployed into a working application used for evaluation workflows.
+      </p>
+
+      <p className="text-gray-400 leading-relaxed mb-6">
+        Owned full pipeline from model development to UI improvements and CI/CD optimisation, ensuring smooth deployment and real-time usability for stakeholders.
+      </p>
+
+      {/* VIDEO PREVIEW */}
+      <div className="w-full h-[320px] rounded-xl overflow-hidden border border-gray-700 shadow-2xl">
+        <iframe
+          src="https://drive.google.com/file/d/1BT8lOY5iZJzcXyfYOB7LErMdi0WDLDny/preview"
+          className="w-full h-full"
+          allow="autoplay"
+        />
+      </div>
+    </div>
+
+    {/* SKIPSLIDES CARD */}
+    <div className="bg-gray-900/60 border border-gray-800 backdrop-blur-md rounded-2xl p-6 shadow-lg flex flex-col">
+
+      <h3 className="text-2xl font-semibold text-indigo-300 mb-3">
+        SkipSlides – AI Slide Generation Startup
+      </h3>
+
+      <p className="text-gray-400 leading-relaxed mb-4">
+        Co-founded a productivity platform that converts technical projects (codebases / ZIP files) into structured presentation slides automatically, removing the manual effort students face during deadlines.
+      </p>
+
+      <p className="text-gray-400 leading-relaxed mb-6">
+        Built the core pipeline for parsing project structure and extracting key insights, with current focus on improving slide formatting, layout quality, and visual consistency.
+      </p>
+
+      {/* IMAGE PREVIEW */}
+      <img
+        src="/images/slides_1.jpeg"
+        className="w-full h-[320px] object-cover rounded-xl shadow-2xl border border-gray-700"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+{/* Certifications & Achievements Section */}
+<section
+  id="certifications"
+  className="px-6 py-20 max-w-6xl mx-auto"
+>
+  <h2 className="text-4xl font-bold mb-14 text-center text-indigo-300">
+    Certifications & Achievements
+  </h2>
+
+  <div className="grid md:grid-cols-2 gap-8">
+
     {experiencesAndCerts.map((e, i) => (
       <motion.div
         key={i}
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: i * 0.2 }}
-        className="relative"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: i * 0.1, duration: 0.5 }}
+        className="bg-gray-900/60 border border-gray-800 rounded-2xl p-6 backdrop-blur-md shadow-lg hover:shadow-[0_0_25px_rgba(99,102,241,0.25)] transition-all"
       >
-        {/* Adjusted circle position */}
-        <span className="absolute -left-6 top-1 w-5 h-5 bg-indigo-500 rounded-full"></span>
-        <h3 className="text-xl font-semibold">{e.title}</h3>
-        {e.date && <p className="text-indigo-300">{e.date}</p>}
-        <p className="text-gray-400 text-sm">{e.desc}</p>
+
+        {/* CATEGORY TAG */}
+        <span className="inline-block text-xs mb-3 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300">
+          {e.category}
+        </span>
+
+        {/* TITLE */}
+        <h3 className="text-lg font-semibold text-white mb-1">
+          {e.title}
+        </h3>
+
+        {/* DATE */}
+        {e.date && (
+          <p className="text-indigo-400 text-sm mb-3">
+            {e.date}
+          </p>
+        )}
+
+        {/* DESCRIPTION */}
+        <p className="text-gray-400 text-sm leading-relaxed">
+          {e.desc}
+        </p>
+
       </motion.div>
     ))}
+
   </div>
 </section>
+
 
 
       {/* Contact Section */}
